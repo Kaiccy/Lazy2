@@ -1,0 +1,26 @@
+//
+//  WXHeader.pch
+//  Lazy2
+//
+//  Created by 君爵信息科技 on 16/3/23.
+//  Copyright © 2016年 Wangxue. All rights reserved.
+//
+
+#ifndef WXHeader_pch
+#define WXHeader_pch
+
+
+#import "Urls.h"
+#import "LoginViewController.h"
+#import "ForgetPasswordViewController.h"
+#import "AfeiGuidancePageClass.h"
+
+
+
+
+
+
+
+
+
+#endif /* WXHeader_pch */
