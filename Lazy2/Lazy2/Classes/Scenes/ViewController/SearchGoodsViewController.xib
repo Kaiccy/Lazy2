@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchGoodsViewController">
+            <connections>
+                <outlet property="view" destination="VaZ-v4-8dw" id="QJS-Y1-bka"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="VaZ-v4-8dw">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRd-ox-Mec">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BeN-BT-Yjh">
+                            <rect key="frame" x="8" y="22" width="30" height="32"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="30" id="zV2-PG-AFc"/>
+                            </constraints>
+                            <state key="normal" image="19">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搜  索" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aO-PQ-hwk">
+                            <rect key="frame" x="88" y="25" width="412" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.63529411759999999" green="0.28627450980000002" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="54W-JF-nAW"/>
+                        <constraint firstAttribute="trailing" secondItem="5aO-PQ-hwk" secondAttribute="trailing" constant="100" id="9nu-Xw-DhD"/>
+                        <constraint firstAttribute="bottom" secondItem="BeN-BT-Yjh" secondAttribute="bottom" constant="10" id="DMR-9D-NY6"/>
+                        <constraint firstItem="5aO-PQ-hwk" firstAttribute="leading" secondItem="BeN-BT-Yjh" secondAttribute="trailing" constant="50" id="Oyn-dQ-zcU"/>
+                        <constraint firstItem="BeN-BT-Yjh" firstAttribute="top" secondItem="SRd-ox-Mec" secondAttribute="top" constant="22" id="adV-DX-wQy"/>
+                        <constraint firstItem="BeN-BT-Yjh" firstAttribute="leading" secondItem="SRd-ox-Mec" secondAttribute="leading" constant="8" id="lOB-0Z-6I9"/>
+                        <constraint firstItem="5aO-PQ-hwk" firstAttribute="top" secondItem="SRd-ox-Mec" secondAttribute="top" constant="25" id="oM9-RP-NDV"/>
+                    </constraints>
+                </view>
+                <searchBar contentMode="redraw" placeholder="请输入您要购买的产品" translatesAutoresizingMaskIntoConstraints="NO" id="Eq6-Nn-8AG">
+                    <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                    <color key="backgroundColor" red="0.63529411759999999" green="0.28627450980000002" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="WiX-zx-Rzn"/>
+                    </constraints>
+                    <color key="tintColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="WiX-zx-Rzn"/>
+                        </mask>
+                    </variation>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Xxp-A9-nwF">
+                    <rect key="frame" x="0.0" y="118" width="600" height="482"/>
+                    <color key="backgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="464" id="mPj-Xi-gth"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="mPj-Xi-gth"/>
+                        </mask>
+                    </variation>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="Eq6-Nn-8AG" firstAttribute="leading" secondItem="VaZ-v4-8dw" secondAttribute="leading" id="244-3K-aYd"/>
+                <constraint firstItem="Eq6-Nn-8AG" firstAttribute="top" secondItem="SRd-ox-Mec" secondAttribute="bottom" id="2fc-r0-3y9"/>
+                <constraint firstItem="Xxp-A9-nwF" firstAttribute="leading" secondItem="VaZ-v4-8dw" secondAttribute="leading" id="9Ab-hW-ZSs"/>
+                <constraint firstAttribute="trailing" secondItem="SRd-ox-Mec" secondAttribute="trailing" id="P6d-Kd-kDa"/>
+                <constraint firstAttribute="bottom" secondItem="Xxp-A9-nwF" secondAttribute="bottom" id="aI6-sy-K0g"/>
+                <constraint firstItem="Xxp-A9-nwF" firstAttribute="top" secondItem="Eq6-Nn-8AG" secondAttribute="bottom" constant="10" id="qF9-Up-BwH"/>
+                <constraint firstAttribute="trailing" secondItem="Eq6-Nn-8AG" secondAttribute="trailing" id="qpf-hj-3eb"/>
+                <constraint firstItem="SRd-ox-Mec" firstAttribute="top" secondItem="VaZ-v4-8dw" secondAttribute="top" id="t0C-e2-PDc"/>
+                <constraint firstAttribute="trailing" secondItem="Xxp-A9-nwF" secondAttribute="trailing" id="zd4-2h-yP2"/>
+                <constraint firstItem="SRd-ox-Mec" firstAttribute="leading" secondItem="VaZ-v4-8dw" secondAttribute="leading" id="zi1-G2-5pW"/>
+            </constraints>
+            <point key="canvasLocation" x="363" y="154"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="19" width="29" height="29"/>
+    </resources>
+</document>
