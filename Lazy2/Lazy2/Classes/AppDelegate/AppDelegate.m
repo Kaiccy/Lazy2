@@ -26,7 +26,7 @@
     //This Is A Judge First Launch
 //    [self isFirstLaunch];
     
-    self.window.rootViewController = [ForgetPasswordViewController new];
+    self.window.rootViewController = [GrainWineRushViewController new];
 
     return YES;
 }
