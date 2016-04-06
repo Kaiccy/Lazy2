@@ -10,7 +10,63 @@
 
 @interface LoginViewController ()
 
+- (IBAction)registerBtnAction:(UIButton *)sender;//顶部的注册按钮
+
+@property (weak, nonatomic) IBOutlet UIButton *topLoginBtn;//顶部的登录按钮
+
+//登录页面
+@property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
+
+@property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+
+@property (weak, nonatomic) IBOutlet UILabel *CodeTime;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+
+@property (weak, nonatomic) IBOutlet UIButton *loginNowBtn;
+
+@property (weak, nonatomic) IBOutlet UILabel *weiboLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *qqLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *weichatLabel;
+
+- (IBAction)getCodeAction:(UIButton *)sender;
+
+- (IBAction)forgetPassword:(UIButton *)sender;
+
+- (IBAction)LoginWithPhoneBtnActtion:(UIButton *)sender;
+
+- (IBAction)weichatLoginAction:(UIButton *)sender;
+
+- (IBAction)weiboLoginAction:(UIButton *)sender;
+
+- (IBAction)qqLoginAction:(UIButton *)sender;
+
+
+//注册页面
+@property (weak, nonatomic) IBOutlet UIView *registerView;
+
+@property (weak, nonatomic) IBOutlet UITextField *rPhoneTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *rPassword;
+
+@property (weak, nonatomic) IBOutlet UITextField *rPasswordSureTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *rCodeTf;
+
+@property (weak, nonatomic) IBOutlet UILabel *rCodeLabel;
+
+- (IBAction)getRCodeAction:(UIButton *)sender;
+
+- (IBAction)registerNowAction:(UIButton *)sender;
+
+//返回按钮
+- (IBAction)goBackAction:(UIButton *)sender;
+
 @end
+
+
 
 @implementation LoginViewController
 
@@ -35,4 +91,30 @@
 }
 */
 
+- (IBAction)registerBtnAction:(UIButton *)sender {
+}
+
+- (IBAction)getCodeAction:(UIButton *)sender {
+}
+- (IBAction)forgetPassword:(UIButton *)sender {
+}
+
+- (IBAction)LoginWithPhoneBtnActtion:(UIButton *)sender {
+}
+
+- (IBAction)weichatLoginAction:(UIButton *)sender {
+}
+
+- (IBAction)weiboLoginAction:(UIButton *)sender {
+}
+
+- (IBAction)qqLoginAction:(UIButton *)sender {
+}
+- (IBAction)getRCodeAction:(UIButton *)sender {
+}
+- (IBAction)registerNowAction:(UIButton *)sender {
+}
+
+- (IBAction)goBackAction:(UIButton *)sender {
+}
 @end
