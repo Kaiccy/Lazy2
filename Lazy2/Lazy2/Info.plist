@@ -2,23 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationshortcutltems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutltemType</key>
-			<string></string>
-			<key>UIApplicationShortcutltemTitle</key>
-			<string>NextVC</string>
-			<key>UIApplicationShortcutltemSubtitle</key>
-			<string>Lazy</string>
-			<key>UIApplicationShortcutltemIconType</key>
-			<string></string>
-			<key>UIApplicationShortcutltemIconFile</key>
-			<string></string>
-			<key>UIApplicationShortcutltemUserInfo</key>
-			<string></string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -39,10 +22,40 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>tencentopenapi</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>tencent+appid</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIApplicationshortcutltems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutltemIconFile</key>
+			<string></string>
+			<key>UIApplicationShortcutltemIconType</key>
+			<string></string>
+			<key>UIApplicationShortcutltemSubtitle</key>
+			<string>Lazy</string>
+			<key>UIApplicationShortcutltemTitle</key>
+			<string>NextVC</string>
+			<key>UIApplicationShortcutltemType</key>
+			<string></string>
+			<key>UIApplicationShortcutltemUserInfo</key>
+			<string></string>
+		</dict>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

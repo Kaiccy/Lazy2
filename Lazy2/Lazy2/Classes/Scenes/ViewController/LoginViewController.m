@@ -43,6 +43,9 @@
 
 - (IBAction)qqLoginAction:(UIButton *)sender;
 
+- (IBAction)loginNowAction:(UIButton *)sender;
+
+
 
 //注册页面
 @property (weak, nonatomic) IBOutlet UIView *registerView;
@@ -73,48 +76,63 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+
+
+
 }
+
+
+
+//顶上的注册按钮
+- (IBAction)registerBtnAction:(UIButton *)sender {
+}
+
+//获取登录时的验证码
+- (IBAction)getCodeAction:(UIButton *)sender {
+}
+
+//忘记密码
+- (IBAction)forgetPassword:(UIButton *)sender {
+}
+
+//使用手机号快速登录
+- (IBAction)LoginWithPhoneBtnActtion:(UIButton *)sender {
+}
+
+//微信登录
+- (IBAction)weichatLoginAction:(UIButton *)sender {
+    
+}
+
+//微博登录
+- (IBAction)weiboLoginAction:(UIButton *)sender {
+}
+
+//扣扣登录
+- (IBAction)qqLoginAction:(UIButton *)sender {
+}
+
+//立即登录
+- (IBAction)loginNowAction:(UIButton *)sender {
+}
+
+//获取注册时的验证码
+- (IBAction)getRCodeAction:(UIButton *)sender {
+}
+
+//立即注册
+- (IBAction)registerNowAction:(UIButton *)sender {
+}
+
+//返回
+- (IBAction)goBackAction:(UIButton *)sender {
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)registerBtnAction:(UIButton *)sender {
-}
-
-- (IBAction)getCodeAction:(UIButton *)sender {
-}
-- (IBAction)forgetPassword:(UIButton *)sender {
-}
-
-- (IBAction)LoginWithPhoneBtnActtion:(UIButton *)sender {
-}
-
-- (IBAction)weichatLoginAction:(UIButton *)sender {
-}
-
-- (IBAction)weiboLoginAction:(UIButton *)sender {
-}
-
-- (IBAction)qqLoginAction:(UIButton *)sender {
-}
-- (IBAction)getRCodeAction:(UIButton *)sender {
-}
-- (IBAction)registerNowAction:(UIButton *)sender {
-}
-
-- (IBAction)goBackAction:(UIButton *)sender {
 }
 @end
