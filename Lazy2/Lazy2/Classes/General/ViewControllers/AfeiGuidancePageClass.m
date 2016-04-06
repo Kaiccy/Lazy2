@@ -21,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    /*
+        引导页
+     */
     
     self.view.backgroundColor=[UIColor groupTableViewBackgroundColor];
     

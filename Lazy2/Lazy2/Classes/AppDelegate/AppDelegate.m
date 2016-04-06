@@ -26,7 +26,7 @@
     //This Is A Judge First Launch
 //    [self isFirstLaunch];
     
-    self.window.rootViewController = [GrainWineRushViewController new];
+    self.window.rootViewController = [LoginViewController new];
 
     return YES;
 }

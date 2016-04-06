@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AfeiGuidancePageClass : UIViewController
+    /*
+        引导页
+     */
 
 @end
