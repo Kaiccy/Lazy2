@@ -9,8 +9,13 @@
 #import "AppDelegate.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+#import "AddAddressViewController.h"
+@interface AppDelegate ()<WXApiDelegate>
 
-@interface AppDelegate ()
+@property (nonatomic,strong)BMKMapManager *mapManager;
 
 @end
 
@@ -29,15 +34,19 @@
 //    [self isFirstLaunch];
     
     
-    
     //微信
     [WXApi registerApp:@"wx16408db628773d61" withDescription:@"weixin"];
     
+    self.mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定     generalDelegate参数
+    BOOL ret = [self.mapManager start:@"YzTL8rZ5qLNP41OrGy7qFkx6My26ANrt"  generalDelegate:nil];
+    if (!ret) {
+        NSLog(@"百度地图授权失败 appdelegate.m!");
+    }
     
     
     
-    
-    self.window.rootViewController = [LoginViewController new];
+    self.window.rootViewController = [AddAddressViewController new];
 
     return YES;
 }

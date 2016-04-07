@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "AFNetworking.h"
 #import "WXApi.h"
 
 @interface LoginViewController ()

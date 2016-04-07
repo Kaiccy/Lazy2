@@ -12,12 +12,12 @@
 
 + (void)changeWindowRootVC:(UIViewController *)vc{
     
-    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    window.rootViewController = vc;
-    [UIView beginAnimations:nil context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationTransition:5 forView:window cache:YES];
-    [UIView commitAnimations];
+//    UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+//    window.rootViewController = vc;
+//    [UIView beginAnimations:nil context:nil];
+//    [UIView setAnimationDuration:0.5];
+//    [UIView setAnimationTransition:5 forView:window cache:YES];
+//    [UIView commitAnimations];
 }
 
 + (void)flipView:(UIView *)view{

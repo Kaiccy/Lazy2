@@ -91,7 +91,7 @@
 }
 - (void)saveAddressWay{
     self.saveAddress=[[UIButton alloc] initWithFrame:CGRectMake(40, 320, Main_Screen_Width-80, 40)];
-    [self.saveAddress setTitle:@"保存" forState:UIControlStateNormal];
+    [self.saveAddress setTitle:@"保 存 地 址" forState:UIControlStateNormal];
     [self.saveAddress setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.saveAddress.backgroundColor=[UIColor redColor];
     [self.contentView addSubview:self.saveAddress];
