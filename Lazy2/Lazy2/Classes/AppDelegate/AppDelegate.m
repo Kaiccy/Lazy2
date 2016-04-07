@@ -76,10 +76,12 @@
     
 //    [WXApi handleOpenURL:url delegate:self];
     return [TencentOAuth HandleOpenURL:url] || [WXApi handleOpenURL:url delegate:self];
-    
-//    return YES;
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    return [TencentOAuth HandleOpenURL:url];
+}
 
 
 

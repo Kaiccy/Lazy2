@@ -8,8 +8,13 @@
 
 #import "LoginViewController.h"
 #import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
-@interface LoginViewController ()
+@interface LoginViewController ()<TencentSessionDelegate>
+{
+    TencentOAuth *tencentOAuth;
+    NSArray *permissions;
+}
 
 - (IBAction)registerBtnAction:(UIButton *)sender;//顶部的注册按钮
 
@@ -78,7 +83,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    tencentOAuth=[[TencentOAuth alloc]initWithAppId:@"1104911897" andDelegate:self];
+    
+    //4，设置需要的权限列表，此处尽量使用什么取什么。
+    permissions= [NSArray arrayWithObjects:@"get_user_info", @"get_simple_userinfo", @"add_t", nil];
 
 
 }
@@ -87,6 +95,12 @@
 
 //顶上的注册按钮
 - (IBAction)registerBtnAction:(UIButton *)sender {
+    self.registerView.hidden = NO;
+}
+
+// 顶部登录按钮
+- (IBAction)topLoginAction:(id)sender {
+    self.registerView.hidden = YES;
 }
 
 //获取登录时的验证码
@@ -125,7 +139,58 @@
 
 //扣扣登录
 - (IBAction)qqLoginAction:(UIButton *)sender {
+    [tencentOAuth authorize:permissions inSafari:NO];
 }
+
+#pragma mark -- TencentSessionDelegate
+//登陆完成调用
+- (void)tencentDidLogin
+{
+//    resultLable.text = @"登录完成";
+    NSLog(@"登录完成");
+    
+    
+    if (tencentOAuth.accessToken && 0 != [tencentOAuth.accessToken length])
+    {
+        //  记录登录用户的OpenID、Token以及过期时间
+//        tokenLable.text = tencentOAuth.accessToken;
+        NSLog(@"tencentOAuth.accessToken = %@",tencentOAuth.accessToken);
+        [tencentOAuth getUserInfo];
+    }
+    else
+    {
+//        tokenLable.text = @"登录不成功 没有获取accesstoken";
+        NSLog(@"登录不成功 没有获取accesstoken");
+    }
+}
+
+//非网络错误导致登录失败：
+-(void)tencentDidNotLogin:(BOOL)cancelled
+{
+    NSLog(@"tencentDidNotLogin");
+    if (cancelled)
+    {
+//        resultLable.text = @"用户取消登录";
+        NSLog(@"用户取消登录");
+    }else{
+//        resultLable.text = @"登录失败";
+        NSLog(@"登录失败");
+    }
+}
+// 网络错误导致登录失败：
+-(void)tencentDidNotNetWork
+{
+    NSLog(@"tencentDidNotNetWork");
+//    resultLable.text = @"无网络连接，请设置网络";
+    NSLog(@"无网络连接");
+}
+
+-(void)getUserInfoResponse:(APIResponse *)response
+{
+    NSLog(@"respons:%@",response.jsonResponse);
+}
+
+
 
 //立即登录
 - (IBAction)loginNowAction:(UIButton *)sender {
