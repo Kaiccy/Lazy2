@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "WXApi.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate ()
 
@@ -26,10 +28,54 @@
     //This Is A Judge First Launch
 //    [self isFirstLaunch];
     
+    
+    
+    //微信
+    [WXApi registerApp:@"wx16408db628773d61" withDescription:@"weixin"];
+    
+    
+    
+    
+    
     self.window.rootViewController = [LoginViewController new];
 
     return YES;
 }
+
+#pragma 微信登录
+//授权后回调 WXApiDelegate
+-(void)onResp:(BaseReq *)resp
+{
+    /*
+     ErrCode ERR_OK = 0(用户同意)
+     ERR_AUTH_DENIED = -4（用户拒绝授权）
+     ERR_USER_CANCEL = -2（用户取消）
+     code    用户换取access_token的code，仅在ErrCode为0时有效
+     state   第三方程序发送时用来标识其请求的唯一性的标志，由第三方程序调用sendReq时传入，由微信终端回传，state字符串长度不能超过1K
+     lang    微信客户端当前语言
+     country 微信用户当前国家信息
+     */
+    SendAuthResp *aresp = (SendAuthResp *)resp;
+    if (aresp.errCode== 0) {
+        NSString *code = aresp.code;
+        NSDictionary *dic = @{@"code":code};
+    }
+}
+
+// 这个方法是用于从微信返回第三方App
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    
+//    [WXApi handleOpenURL:url delegate:self];
+    return [TencentOAuth HandleOpenURL:url] || [WXApi handleOpenURL:url delegate:self];
+    
+//    return YES;
+}
+
+
+
+
+
+
 
 #pragma Mark   This Is A 3D Touch Way  ⬇️⬇️⬇️⬇️
 /*

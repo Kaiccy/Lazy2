@@ -7,6 +7,8 @@
 //
 
 #import "LoginViewController.h"
+#import "AFNetworking.h"
+#import "WXApi.h"
 
 @interface LoginViewController ()
 
@@ -102,8 +104,21 @@
 
 //微信登录
 - (IBAction)weichatLoginAction:(UIButton *)sender {
-    
+   
+    if ([WXApi isWXAppInstalled]) {
+        SendAuthReq *req = [[SendAuthReq alloc] init];
+        req.scope = @"snsapi_userinfo";
+        req.state = @"App";
+        [WXApi sendReq:req];
+    }
 }
+//-(void)sendAuthRequest
+//{
+//    SendAuthReq* req =[[SendAuthReq alloc ] init];
+//    req.scope = @"snsapi_userinfo,snsapi_base";
+//    req.state = @"0744" ;
+//    [WXApi sendReq:req];
+//}
 
 //微博登录
 - (IBAction)weiboLoginAction:(UIButton *)sender {
