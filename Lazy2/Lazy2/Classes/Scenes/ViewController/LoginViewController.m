@@ -9,8 +9,10 @@
 #import "LoginViewController.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "WeiboSDK.h"
 
-@interface LoginViewController ()<TencentSessionDelegate>
+
+@interface LoginViewController ()<TencentSessionDelegate,WeiboSDKDelegate>
 {
     TencentOAuth *tencentOAuth;
     NSArray *permissions;
@@ -133,9 +135,35 @@
 //    [WXApi sendReq:req];
 //}
 
+
+
 //微博登录
 - (IBAction)weiboLoginAction:(UIButton *)sender {
+    
+//    [WeiboSDK enableDebugMode:YES];
+//    [WeiboSDK registerApp:@"585317554"];
+//    
+//    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+//    request.redirectURI = @"http://www.sina.com";
+//    request.scope = @"all";
+//    request.userInfo = @{@"myKey": @"myValue"};
+//    [WeiboSDK sendRequest:request];
 }
+//#pragma weiboDelegate
+//-(void)didReceiveWeiboResponse:(WBBaseResponse *)response
+//{
+//    if ([response isKindOfClass:WBAuthorizeResponse.class])
+//    {
+//        if ((int)response.statusCode == 0) {
+//            NSDictionary *dic = @{@"userID":[(WBAuthorizeResponse *)response userID],
+//                                  @"accessToken" :[(WBAuthorizeResponse *)response accessToken]};        }
+//    }
+//}
+
+
+
+
+
 
 //扣扣登录
 - (IBAction)qqLoginAction:(UIButton *)sender {

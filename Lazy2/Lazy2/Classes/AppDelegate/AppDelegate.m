@@ -13,6 +13,8 @@
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationComponent.h>
 #import "AddAddressViewController.h"
+#import "WeiboSDK.h"
+
 @interface AppDelegate ()<WXApiDelegate>
 
 @property (nonatomic,strong)BMKMapManager *mapManager;
@@ -26,6 +28,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    self.window.rootViewController = [LoginViewController new];
     
     //This Is A 3D Touch Way
     [self thisIsA3DTouchWay];
@@ -44,9 +47,12 @@
         NSLog(@"百度地图授权失败 appdelegate.m!");
     }
     
+    //注册微博
+    //注册SDK
+    [WeiboSDK enableDebugMode:YES];
+    [WeiboSDK registerApp:@"585317554"];
     
     
-    self.window.rootViewController = [AddAddressViewController new];
 
     return YES;
 }
@@ -75,12 +81,12 @@
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
     
 //    [WXApi handleOpenURL:url delegate:self];
-    return [TencentOAuth HandleOpenURL:url] || [WXApi handleOpenURL:url delegate:self];
+    return [TencentOAuth HandleOpenURL:url] || [WXApi handleOpenURL:url delegate:self]|| [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
     
-    return [TencentOAuth HandleOpenURL:url];
+    return [TencentOAuth HandleOpenURL:url] || [WeiboSDK handleOpenURL:url delegate:self];
 }
 
 
