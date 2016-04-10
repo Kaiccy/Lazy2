@@ -81,12 +81,12 @@
 }
 - (void)provincialAreasButtonWay{
     self.provincialAreasButton=[[UIButton alloc] initWithFrame:CGRectMake(Main_Screen_Width-80, 140, 40, 40)];
-    [self.provincialAreasButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [self.provincialAreasButton setImage:[UIImage imageNamed:@"21.png"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.provincialAreasButton];
 }
 - (void)locationCommunityButtonWay{
     self.locationCommunityButton=[[UIButton alloc] initWithFrame:CGRectMake(Main_Screen_Width-80, 200, 40, 40)];
-    [self.locationCommunityButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+    [self.locationCommunityButton setImage:[UIImage imageNamed:@"21.png"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.locationCommunityButton];
 }
 - (void)saveAddressWay{
