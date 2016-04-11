@@ -31,6 +31,8 @@
     self.myPortraitImage=[[UIImageView alloc] initWithFrame:CGRectMake(Main_Screen_Width/2-50, 40, 100, 100)];
     [self.myPortraitImage setImage:[UIImage imageNamed:@"1.png"]];
     [self.contentView addSubview:self.myPortraitImage];
+    self.myPortraitButton=[[UIButton alloc] initWithFrame:CGRectMake(Main_Screen_Width/2-50, 40, 100, 100)];
+    [self.contentView addSubview:self.myPortraitButton];
 }
 - (void)myNicknameTextFieldWay{
     self.myNicknameTextField=[[UITextField alloc] initWithFrame:CGRectMake(40, 150, Main_Screen_Width-80, 30)];

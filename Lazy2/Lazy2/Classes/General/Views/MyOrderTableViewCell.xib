@@ -120,12 +120,15 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="orderNumberLb" destination="vPN-zM-s5z" id="lbB-qr-H14"/>
+                <outlet property="orderPayNumber" destination="vPN-zM-s5z" id="EK4-L8-QYW"/>
+                <outlet property="orderPayStatus" destination="AUv-E2-pJS" id="p4M-ow-F7T"/>
+                <outlet property="orderPrice" destination="mnb-xu-icy" id="NlV-7x-pLF"/>
+                <outlet property="orderTime" destination="5G9-47-wbW" id="5O0-BL-Y0R"/>
                 <outlet property="orderTimeLb" destination="5G9-47-wbW" id="Ykw-Hb-Z9Z"/>
                 <outlet property="payStateLb" destination="AUv-E2-pJS" id="fOQ-bf-b9b"/>
                 <outlet property="priceLb" destination="mnb-xu-icy" id="1P9-er-Rfz"/>
             </connections>
-            <point key="canvasLocation" x="325" y="234.5"/>
+            <point key="canvasLocation" x="396" y="64.5"/>
         </tableViewCell>
     </objects>
 </document>

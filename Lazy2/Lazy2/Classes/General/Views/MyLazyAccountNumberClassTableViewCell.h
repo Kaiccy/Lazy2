@@ -14,6 +14,7 @@
      */
 //我的头像
 @property (nonatomic,strong)UIImageView *myPortraitImage;
+@property (nonatomic,strong)UIButton *myPortraitButton;
 //我的昵称
 @property (nonatomic,strong)UITextField *myNicknameTextField;
 //手机号

@@ -9,5 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface MyOrderTableViewCell : UITableViewCell
+//订单状态 （已关闭、已成交。。。。。。）
+@property (weak, nonatomic) IBOutlet UILabel *orderPayStatus;
+//订单编号
+@property (weak, nonatomic) IBOutlet UILabel *orderPayNumber;
+//下单时间
+@property (weak, nonatomic) IBOutlet UILabel *orderTime;
+//订单价格
+@property (weak, nonatomic) IBOutlet UILabel *orderPrice;
 
 @end

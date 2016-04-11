@@ -408,6 +408,4 @@ return nil; \
 return self; \
 }
 
-//
-
 #endif

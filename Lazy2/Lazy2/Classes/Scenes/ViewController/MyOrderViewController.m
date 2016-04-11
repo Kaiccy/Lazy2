@@ -7,8 +7,13 @@
 //
 
 #import "MyOrderViewController.h"
+#import "MyOrderTableViewCell.h"
 
-@interface MyOrderViewController ()
+@interface MyOrderViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIButton *navigationBack;
+@property (weak, nonatomic) IBOutlet UITableView *myOrderTableView;
+@property (nonatomic,strong)MyOrderTableViewCell *cell;
 
 @end
 
@@ -16,9 +21,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
 }
-
+#pragma  mark   TableViewDelegate Way
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *addCell = @"MyOrderTableViewCell";
+    self.cell= [tableView dequeueReusableCellWithIdentifier:addCell];
+    if (!self.cell) {
+        self.cell = [[MyOrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:addCell];
+        self.cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+    }
+    return self.cell;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -7,9 +7,24 @@
 //
 
 #import "AddAddressViewController.h"
+#import <BaiduMapAPI_Base/BMKBaseComponent.h>
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Cloud/BMKCloudSearchComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationComponent.h>
+#import <BaiduMapAPI_Utils/BMKUtilsComponent.h>
+#import <BaiduMapAPI_Radar/BMKRadarComponent.h>
+#import "AfeiLazyCustomNavigation.h"
 #import "MacroDefinition.h"
-@interface AddAddressViewController ()
+#import "AddAddressClassTableViewCell.h"
+@interface AddAddressViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate,BMKGeoCodeSearchDelegate,UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic,strong)UITableView *addressTableView;
+@property (nonatomic,strong)CLLocation *cllocation;
+@property (nonatomic,strong)BMKMapView *mapView;
+@property (nonatomic,strong)BMKLocationService *locationService;
+@property (nonatomic,strong)BMKGeoCodeSearch *geoCodeSearch;
+@property (nonatomic,strong)BMKReverseGeoCodeOption *reverseGeoCodeOption;
 @property (nonatomic,strong)NSString *province;//省市区
 @property (nonatomic,strong)NSString *community;//小区
 @property (nonatomic,strong)AddAddressClassTableViewCell *cell;
@@ -31,28 +46,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self navigationBackgroundWay];
+    /*
+        添加地址   ViewController
+     */
+    
+    AFEINAVIGATIONMACRO(@"添加地址");
     [self addBMKMapWay];
     [self addTableViewWay];
 }
-#pragma mark    导航栏设置
-- (void)navigationBackgroundWay{
-    UILabel *navigation=[[UILabel alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, 64)];
-    navigation.backgroundColor=[UIColor redColor];
-    [self.view addSubview:navigation];
-    
-    UILabel *title=[[UILabel alloc] initWithFrame:CGRectMake(80, 20, Main_Screen_Width-160, 44)];
-    title.text=@"添加地址";
-    title.textColor=[UIColor whiteColor];
-    title.textAlignment=NSTextAlignmentCenter;
-    title.font = [UIFont boldSystemFontOfSize:20];
-    [self.view addSubview:title];
-    
-    UIButton *back=[[UIButton alloc] initWithFrame:CGRectMake(10, 20, 44, 44)];
-    [back setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-    [back addTarget:self action:@selector(backTouchClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:back];
-}
+#pragma mark    导航栏返回方法
 - (void)backTouchClick{
     
 }
