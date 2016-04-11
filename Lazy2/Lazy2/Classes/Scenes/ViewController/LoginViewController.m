@@ -9,8 +9,10 @@
 #import "LoginViewController.h"
 #import "WXApi.h"
 #import <TencentOpenAPI/TencentOAuth.h>
+#import "WeiboSDK.h"
 
-@interface LoginViewController ()<TencentSessionDelegate>
+
+@interface LoginViewController ()<TencentSessionDelegate,WBHttpRequestDelegate>
 {
     TencentOAuth *tencentOAuth;
     NSArray *permissions;
@@ -133,14 +135,46 @@
 //    [WXApi sendReq:req];
 //}
 
+
+
 //微博登录
 - (IBAction)weiboLoginAction:(UIButton *)sender {
+    
+//    585317554
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI =  @"http://sns.whalecloud.com/sina2/callback";
+    
+    request.scope = @"all";
+    request.userInfo = @{@"SSO_From": @"ViewController",
+                         @"Other_Info_1": [NSNumber numberWithInt:123],
+                         @"Other_Info_2": @[@"obj1", @"obj2"],
+                         @"Other_Info_3": @{@"key1": @"obj1", @"key2": @"obj2"}};
+    [WeiboSDK sendRequest:request];
 }
+
+
+//#pragma weiboDelegate
+//-(void)didReceiveWeiboResponse:(WBBaseResponse *)response
+//{
+//    if ([response isKindOfClass:WBAuthorizeResponse.class])
+//    {
+//        if ((int)response.statusCode == 0) {
+//            NSDictionary *dic = @{@"userID":[(WBAuthorizeResponse *)response userID],
+//                                  @"accessToken" :[(WBAuthorizeResponse *)response accessToken]};        }
+//    }
+//}
+
+
+
+
+
 
 //扣扣登录
 - (IBAction)qqLoginAction:(UIButton *)sender {
+    permissions = [NSArray arrayWithObjects:kOPEN_PERMISSION_GET_INFO, kOPEN_PERMISSION_GET_USER_INFO, kOPEN_PERMISSION_GET_SIMPLE_USER_INFO, nil];
     [tencentOAuth authorize:permissions inSafari:NO];
 }
+
 
 #pragma mark -- TencentSessionDelegate
 //登陆完成调用
